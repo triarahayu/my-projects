@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: rgb(248, 246, 246);
+}
+
+#main-doc {
+    display: flex;
+}
+
+.content {
+    flex: 70%;
+    margin: 70px 10px 70px 70px;
+}
+
+.TableOfContents {
+    flex: 30%;
+    margin: 70px 70px 70px 10px;
+    position: sticky;
+}
+
+.content, .TableOfContents {
+    padding: 20px;
+    background-color: white;
+    border-radius: 2px;
+    height: 100%;
+}
+
+nav#navbar li {
+    list-style: none;
+}
+
+nav#navbar {
+    margin: 10px;
+}
+
+nav#navbar li a:hover {
+    color: black;
+}
+
+nav#navbar li a:visited {
+    color: blue;
+}
+
+nav#navbar li {
+    padding: 10px 0;
+}
+
+nav#navbar li a {
+    font-size: 1.2rem;
+}
+
+.big {
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.main-section {
+    margin: 20px;
+}
+
+p {
+    line-height: 1.5;
+    font-size: 1.1rem;
+    padding: 10px 0;
+}
+
+.medium {
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+    #main-doc {
+        flex-direction: column;
+    }
+
+    .content {
+        order: 2; /* Make .content appear after .TableOfContents */
+        flex: 100%;
+        margin: 20px;
+    }
+
+    .TableOfContents {
+        order: 1; /* Make .TableOfContents appear before .content */
+        flex: 100%;
+        margin: 20px;
+        position: static; /* Remove sticky positioning for small screens */
+    }
+}
